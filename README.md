@@ -1,2 +1,1 @@
-AI-simulator-SDK-java
-=====================
+This is a software development kit (SDK) for AI-simulator project written on Java.
