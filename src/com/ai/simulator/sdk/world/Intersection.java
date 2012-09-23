@@ -1,4 +1,4 @@
-package com.ai.simulator.sdk.util;
+package com.ai.simulator.sdk.world;
 
 /**
  * Available intersection types

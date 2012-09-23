@@ -1,10 +1,10 @@
-package com.ai.simulator.sdk.util;
+package com.ai.simulator.sdk.world;
 
 import junit.framework.Assert;
 import org.junit.Test;
 
 /**
- * Unit test for {@link Color} class
+ * Unit test for {@link com.ai.simulator.sdk.world.Color} class
  *
  * @author Smirnoff Y
  * @since 9/23/12 12:57 PM

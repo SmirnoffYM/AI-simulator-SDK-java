@@ -1,8 +1,8 @@
 package com.ai.simulator.sdk.robot;
 
-import com.ai.simulator.sdk.util.Color;
-import com.ai.simulator.sdk.util.Intersection;
-import com.ai.simulator.sdk.util.Point;
+import com.ai.simulator.sdk.world.Color;
+import com.ai.simulator.sdk.world.Intersection;
+import com.ai.simulator.sdk.world.Point;
 
 import java.util.Map;
 
