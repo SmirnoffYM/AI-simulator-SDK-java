@@ -23,4 +23,26 @@ public class Point {
     public int Y() {
         return Y;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Point point = (Point) o;
+
+        return X == point.X && Y == point.Y;
+    }
+
+    @Override
+    public int hashCode() {
+        int result = X;
+        result = 31 * result + Y;
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "[" + X + ", " + Y + "]";
+    }
 }

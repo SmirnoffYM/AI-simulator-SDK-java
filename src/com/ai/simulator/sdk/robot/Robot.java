@@ -1,5 +1,6 @@
 package com.ai.simulator.sdk.robot;
 
+import com.ai.simulator.sdk.util.Color;
 import com.ai.simulator.sdk.util.Intersection;
 import com.ai.simulator.sdk.util.Point;
 
@@ -13,20 +14,25 @@ import java.util.Map;
  */
 public class Robot {
 
-    //TODO: color
+    private Color color;
     private int size;
     private double orientation;
     private Intersection intersection;
     private Point coordinates;
     private Map<String, Double> parameters;
 
-    public Robot(int size, double orientation, Intersection intersection, Point coordinates,
+    public Robot(Color color, int size, double orientation, Intersection intersection, Point coordinates,
                  Map<String, Double> parameters) {
+        this.color = color;
         this.size = size;
         this.orientation = orientation;
         this.intersection = intersection;
         this.coordinates = coordinates;
         this.parameters = parameters;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     public int getSize() {
