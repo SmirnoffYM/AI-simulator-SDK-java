@@ -1,0 +1,19 @@
+<component name="libraryTable">
+  <library name="reflections-0.9.8-uberjar">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/dom4j-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/gson-1.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/guava-11.0.2.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/javassist-3.12.1.GA.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/jsr305-1.3.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/reflections-0.9.8.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/slf4j-api-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/slf4j-simple-1.6.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/xml-apis-1.0.b2.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$PROJECT_DIR$/lib/reflections-0.9.8-uberjar/jsr305-1.3.9.jar!/" />
+    </SOURCES>
+  </library>
+</component>

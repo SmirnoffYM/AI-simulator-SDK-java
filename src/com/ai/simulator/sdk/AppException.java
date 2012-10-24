@@ -8,17 +8,21 @@ package com.ai.simulator.sdk;
  */
 public class AppException extends Exception {
 
+    @SuppressWarnings("unused")
     public AppException() {
     }
 
+    @SuppressWarnings("unused")
     public AppException(String message) {
         super(message);
     }
 
+    @SuppressWarnings("unused")
     public AppException(String message, Throwable cause) {
         super(message, cause);
     }
 
+    @SuppressWarnings("unused")
     public AppException(Throwable cause) {
         super(cause);
     }

@@ -1,5 +1,7 @@
 package com.ai.simulator.sdk.world;
 
+import com.ai.simulator.sdk.AppException;
+
 /**
  * Available intersection types
  *
@@ -8,5 +10,18 @@ package com.ai.simulator.sdk.world;
  */
 public enum Intersection {
 
-    Allowed, Denied, AllowedForSameColor
+    Allowed, Denied, AllowedForSameColor;
+
+    public static Intersection fromInt(int intersection) throws AppException {
+        switch (intersection) {
+            case 0:
+                return Intersection.Allowed;
+            case 1:
+                return Intersection.Denied;
+            case 2:
+                return Intersection.AllowedForSameColor;
+            default:
+                throw new AppException("Invalid intersection param value");
+        }
+    }
 }

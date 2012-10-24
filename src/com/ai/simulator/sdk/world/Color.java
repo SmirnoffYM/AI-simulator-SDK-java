@@ -1,41 +1,47 @@
 package com.ai.simulator.sdk.world;
 
+import com.ai.simulator.sdk.compatibility.UnsignedByte;
+
 /**
  * Class represents simple RGB color
  *
  * @author Smirnoff Y
  * @since 9/23/12 12:32 PM
  */
-public class Color {
+public final class Color {
 
-    private int red;
-    private int green;
-    private int blue;
+    private UnsignedByte red;
+    private UnsignedByte green;
+    private UnsignedByte blue;
 
     public Color(int red, int green, int blue) {
-        this.red = red;
-        this.green = green;
-        this.blue = blue;
+        this.red = new UnsignedByte(red);
+        this.green = new UnsignedByte(green);
+        this.blue = new UnsignedByte(blue);
+    }
+
+    public Color(byte red, byte green, byte blue) {
+        this.red = new UnsignedByte(red);
+        this.green = new UnsignedByte(green);
+        this.blue = new UnsignedByte(blue);
     }
 
     public Color(String color) {
-        color = color.toLowerCase();
-        if (!color.startsWith("#") || color.length() != 7)
-            throw new RuntimeException("Invalid color string");
-        red = Integer.valueOf(color.substring(1, 3), 16);
-        green = Integer.valueOf(color.substring(3, 5), 16);
-        blue = Integer.valueOf(color.substring(5, 7), 16);
+        java.awt.Color col = java.awt.Color.decode(color);
+        red = new UnsignedByte(col.getRed());
+        green = new UnsignedByte(col.getGreen());
+        blue = new UnsignedByte(col.getBlue());
     }
 
-    public int red() {
+    public UnsignedByte red() {
         return red;
     }
 
-    public int green() {
+    public UnsignedByte green() {
         return green;
     }
 
-    public int blue() {
+    public UnsignedByte blue() {
         return blue;
     }
 
@@ -46,19 +52,22 @@ public class Color {
 
         Color color = (Color) o;
 
-        return blue == color.blue && green == color.green && red == color.red;
+        return !(blue != null ? !blue.equals(color.blue) : color.blue != null)
+                && !(green != null ? !green.equals(color.green) : color.green != null)
+                && !(red != null ? !red.equals(color.red) : color.red != null);
     }
 
     @Override
     public int hashCode() {
-        int result = red;
-        result = 31 * result + green;
-        result = 31 * result + blue;
+        int result = red != null ? red.hashCode() : 0;
+        result = 31 * result + (green != null ? green.hashCode() : 0);
+        result = 31 * result + (blue != null ? blue.hashCode() : 0);
         return result;
     }
 
     @Override
     public String toString() {
-        return "#" + Integer.toString(red, 16) + Integer.toString(green, 16) + Integer.toString(blue, 16);
+        return "#" + Integer.toHexString(
+                new java.awt.Color(red.intValue(), green.intValue(), blue.intValue()).getRGB()).substring(2);
     }
 }

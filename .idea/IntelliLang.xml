@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="LanguageInjectionConfiguration">
+    <injection language="CSS" injector-id="java">
+      <display-name>Assert (junit.framework)</display-name>
+      <place disabled="true"><![CDATA[psiParameter().ofMethod(0, psiMethod().withName("assertEquals").withParameters("java.lang.String", "java.lang.String").definedInClass("junit.framework.Assert"))]]></place>
+    </injection>
+  </component>
+</project>
+
