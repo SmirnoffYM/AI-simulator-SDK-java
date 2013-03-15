@@ -1,20 +1,19 @@
 package com.ai.simulator.sdk.core;
 
-import com.ai.simulator.sdk.agent.EnvironmentMap;
 import com.ai.simulator.sdk.compatibility.UnsignedByte;
 import com.ai.simulator.sdk.messages.impl.ThereYouSeeMessage;
-import com.ai.simulator.sdk.world.Color;
-
 import java.util.List;
 import java.util.Random;
 
 /**
- * TODO: description
+ * Strategy needed 4 testing purposes
  *
  * @author Smirnoff Y
  * @since 11/18/12 9:54 PM
  */
+@SuppressWarnings("unused")
 public class MyRobotStrategy implements RobotStrategy {
+
     private boolean moved = false;
     int currentX = 12000;
     int currentY = 12000;
