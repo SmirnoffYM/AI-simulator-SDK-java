@@ -8,7 +8,6 @@ import com.ai.simulator.sdk.util.Constants;
 
 import java.lang.reflect.InvocationTargetException;
 import java.net.DatagramPacket;
-import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.nio.ByteBuffer;
 
@@ -37,7 +36,7 @@ public abstract class Message {
         protocolVersion = new UnsignedByte(Constants.PROTOCOL_VERSION);
         this.sequentialNumber = new UnsignedInt(sequentialNumber);
         this.envObjectID = new UnsignedShort(envObjectID);
-        this.port = new UnsignedShort(Constants.ROBOT_PORT);
+        this.port = new UnsignedShort(port);
         this.type = new UnsignedByte(getClass().getAnnotation(SimulatorMessage.class).type());
     }
 

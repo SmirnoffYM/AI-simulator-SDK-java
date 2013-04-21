@@ -21,11 +21,13 @@ public class HubModule {
     private volatile Robot robot;
     private static RobotActions actions = null;
     private RobotStrategy robotStrategy;
+    private final int port;
 
     public HubModule(Robot robot, int port, RobotStrategy robotStrategy) throws SocketException, AppException {
         if (actions != null)
             throw new AppException("Do not try to leave Omsk!"); //TODO: shitty code, yeah? It must be refactored.
         this.robot = robot;
+        this.port = port;
         networkManager = new NetworkManager(port);
         actions = new RobotActions(this);
         this.robotStrategy = robotStrategy;
@@ -51,6 +53,10 @@ public class HubModule {
 
     public static RobotActions getActions() {
         return actions;
+    }
+
+    public int getPort() {
+        return port;
     }
 
     private void startReceivingMessages() {

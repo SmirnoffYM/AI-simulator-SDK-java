@@ -13,5 +13,4 @@ public final class Constants {
 
     public static final int SIMULATOR_PORT = 9000;
     public static final int PROTOCOL_VERSION = 3;
-    public static final int ROBOT_PORT = 8085;
 }
