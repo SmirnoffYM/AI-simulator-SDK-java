@@ -24,6 +24,7 @@ public final class BumpMessage extends Message {
 
     private int x;
     private int y;
+    private byte bumpType;
 
     public BumpMessage(int sequentialNumber, int envObjectID, int port) {
         super(sequentialNumber, envObjectID, port);
@@ -32,7 +33,7 @@ public final class BumpMessage extends Message {
     public DatagramPacket pack() throws UnknownHostException {
         ByteBuffer buffer = ByteBuffer.allocate(headerBytes + dataSize).
                 put(protocolVersion.byteValue()).putInt(10).put(envObjectID.byteValue()).
-                putShort(port.shortValue()).put(type.byteValue()).putInt(x).putInt(y);
+                putShort(port.shortValue()).put(type.byteValue()).putInt(x).putInt(y).put(bumpType);
         byte[] buf = buffer.array();
         return new DatagramPacket(buf, buf.length, InetAddress.getByName("localhost"), Constants.SIMULATOR_PORT);
     }
@@ -41,6 +42,7 @@ public final class BumpMessage extends Message {
     protected void unpack(ByteBuffer buffer) {
         x = buffer.getInt();
         y = buffer.getInt();
+        bumpType = buffer.get();
     }
 
     public int getX() {
@@ -57,5 +59,13 @@ public final class BumpMessage extends Message {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public byte getBumpType() {
+        return bumpType;
+    }
+
+    public void setBumpType(byte bumpType) {
+        this.bumpType = bumpType;
     }
 }

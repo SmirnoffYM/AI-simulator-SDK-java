@@ -52,7 +52,7 @@ public class MyRobotStrategy implements RobotStrategy {
     }
 
     @Override
-    public void onBumpReceived(int x, int y) {
+    public void onBumpReceived(int x, int y, boolean isMapBoundary) {
 
     }
 

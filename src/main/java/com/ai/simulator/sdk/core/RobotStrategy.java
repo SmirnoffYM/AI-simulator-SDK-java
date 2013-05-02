@@ -15,7 +15,7 @@ public interface RobotStrategy {
 
     public void action();
 
-    public void onBumpReceived(int x, int y);
+    public void onBumpReceived(int x, int y, boolean isMapBoundary);
 
     public void onMovedSuccessfullyReceived();
 

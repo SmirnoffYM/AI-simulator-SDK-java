@@ -76,7 +76,8 @@ public class HubModule {
                         // check for bump message
                         else if (message.getClass().equals(BumpMessage.class)) {
                             BumpMessage bumpMessage = (BumpMessage) message;
-                            robotStrategy.onBumpReceived(bumpMessage.getX(), bumpMessage.getY());
+                            robotStrategy.onBumpReceived(bumpMessage.getX(), bumpMessage.getY(),
+                                    bumpMessage.getBumpType() == 0);
                         }
                         // check for moved successfully message
                         else if (message.getClass().equals(MovedSuccessfullyMessage.class))
